@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			createAgenda: async () => {
-				//if you need to create an agenda_slug use de uri and add the agenda name o user that you want
+				//if you need to create an agenda_slug use the uri and add the agenda name or user that you want
 				try {
 					const response = await fetch(`${URI}/agenda/${AGENDA_SLUG}`);
 					if (response.ok) {
@@ -23,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			getContacts: async () => {
+				//Obtain all the contacts from the agenda 
 				try {
 					//Get the store to use it
 					const store = getStore();
@@ -41,6 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			createContact: async ({ fullName, email, address, phone }) => {
+				//Create a new contact
 				try {
 					const store = getStore();
 					const actions = getActions();
@@ -71,6 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			updateContact: async (contact, id) => {
+				//Update a contact from the agenda
 				try {
 					const store = getStore();
 					const actions = getActions();
@@ -101,6 +104,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			deleteContact: async (contact, id) => {
+				//Delete contact from the agenda
 				const store = getStore();
 				const actions = getActions();
 
