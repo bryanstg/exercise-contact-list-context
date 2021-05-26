@@ -5,9 +5,6 @@ import MikePhoto from "../../img/m101.jpg";
 import { Context } from "../store/appContext";
 
 export const ContactCard = props => {
-	const { store, actions } = useContext(Context);
-	const [state, setState] = useState({});
-
 	const history = useHistory();
 
 	return (
